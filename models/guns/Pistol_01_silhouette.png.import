@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnheu5wec3ox2"
-path="res://.godot/imported/crosshair001.png-5dc4790d442fcea7b5f9edfff4e45603.ctex"
+uid="uid://deaci1txbdh7b"
+path="res://.godot/imported/Pistol_01_silhouette.png-ae3f66eb384ec6ac1afbeb4da018ae0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/crosshair/crosshair001.png"
-dest_files=["res://.godot/imported/crosshair001.png-5dc4790d442fcea7b5f9edfff4e45603.ctex"]
+source_file="res://models/guns/Pistol_01_silhouette.png"
+dest_files=["res://.godot/imported/Pistol_01_silhouette.png-ae3f66eb384ec6ac1afbeb4da018ae0f.ctex"]
 
 [params]
 

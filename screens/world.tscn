@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cyql535agogma"]
+[gd_scene load_steps=12 format=3 uid="uid://cyql535agogma"]
 
 [ext_resource type="Texture2D" uid="uid://c0ei5shdywmuq" path="res://Panorama_Sky_20-512x512.png" id="1_h1iyc"]
 [ext_resource type="PackedScene" uid="uid://c7tbldfn5ljlr" path="res://screens/MainCharacter.tscn" id="2_vg34c"]
-[ext_resource type="Texture2D" uid="uid://cnheu5wec3ox2" path="res://assets/Crosshair/crosshair001.png" id="3_pjdma"]
-[ext_resource type="PackedScene" uid="uid://detv7jt0bjg4g" path="res://screens/barrel_2.tscn" id="4_x38mu"]
+[ext_resource type="Texture2D" uid="uid://cnheu5wec3ox2" path="res://assets/crosshair/crosshair001.png" id="3_pjdma"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_fj7yv"]
 panorama = ExtResource("1_h1iyc")
@@ -88,9 +87,3 @@ offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_pjdma")
-
-[node name="barrel2" parent="." instance=ExtResource("4_x38mu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99156976, 0.25, -4.3244996)
-
-[node name="barrel3" parent="." instance=ExtResource("4_x38mu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33145356, 0.25734282, 2.8816848)
