@@ -7,13 +7,14 @@ const CAMERA_SENSE = 0.003
 
 var direction
 
-#const BOB_FREQ = 2.0
-#const BOB_AMP = 0.08
-#var t_bob = 0.0
+const BOB_FREQ = 2.0
+const BOB_AMP = 0.08
+var t_bob = 0.0
 
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var animation_tree: AnimationTree = $Player/AnimationTree
+@onready var pistol_ap: AnimationPlayer = $Head/Camera3D/Pistol_01/AnimationPlayer
 
 enum States {
 	IDLE,
@@ -39,6 +40,10 @@ func _physics_process(delta: float) -> void:
 		
 	var input_dir := Input.get_vector("move_left","move_right","move_up","move_down")
 	direction = (transform.basis * Vector3(-input_dir.x, 0, -input_dir.y)).normalized()
+	
+	if Input.is_action_just_pressed("fire"):
+		pistol_ap.play("Animations/fire")
+
 	#print(current_state)
 	match current_state:
 		States.IDLE:
@@ -53,16 +58,16 @@ func _physics_process(delta: float) -> void:
 			pass
 
 	#
-	#t_bob += delta * velocity.length() * float(is_on_floor())
-	#camera.transform.origin = _headBob(t_bob)
+	t_bob += delta * velocity.length() * float(is_on_floor())
+	camera.transform.origin = _headBob(t_bob)
 	
 	move_and_slide()
 
-#func _headBob(time) -> Vector3:
-	#var pos = Vector3.ZERO
-	#pos.y = sin(time * BOB_FREQ) * BOB_AMP
-	#pos.x = cos(time * BOB_FREQ/2) * BOB_AMP
-	#return pos
+func _headBob(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * BOB_FREQ) * BOB_AMP
+	pos.x = cos(time * BOB_FREQ/2) * BOB_AMP
+	return pos
 
 func change_state(new_state):
 	if current_state == new_state:
@@ -87,7 +92,7 @@ func change_state(new_state):
 
 func process_idle(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
+		velocity.y = JUMP_VELOCITY
 		change_state(States.JUMPING)
 		return
 	if direction:

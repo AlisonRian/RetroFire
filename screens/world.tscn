@@ -1,8 +1,26 @@
-[gd_scene load_steps=12 format=3 uid="uid://cyql535agogma"]
+[gd_scene load_steps=34 format=3 uid="uid://cyql535agogma"]
 
 [ext_resource type="Texture2D" uid="uid://c0ei5shdywmuq" path="res://Panorama_Sky_20-512x512.png" id="1_h1iyc"]
 [ext_resource type="PackedScene" uid="uid://c7tbldfn5ljlr" path="res://screens/MainCharacter.tscn" id="2_vg34c"]
-[ext_resource type="Texture2D" uid="uid://cnheu5wec3ox2" path="res://assets/crosshair/crosshair001.png" id="3_pjdma"]
+[ext_resource type="Texture2D" uid="uid://dlbgx8j5xpfqp" path="res://Cartoon_green_texture_grass.jpg" id="3_h1iyc"]
+[ext_resource type="Texture2D" uid="uid://cnheu5wec3ox2" path="res://assets/Crosshair/crosshair001.png" id="3_pjdma"]
+[ext_resource type="PackedScene" uid="uid://cdfi3nvi3foe8" path="res://LowPoly Environment Pack/Grass_1.fbx" id="5_sbxgy"]
+[ext_resource type="PackedScene" uid="uid://i0tus0y3r27t" path="res://LowPoly Environment Pack/Grass_2.fbx" id="6_w3fwg"]
+[ext_resource type="PackedScene" uid="uid://c3dpv80d1j3xm" path="res://LowPoly Environment Pack/Plant_1.fbx" id="7_elslt"]
+[ext_resource type="PackedScene" uid="uid://dl0elmk0q1bxy" path="res://LowPoly Environment Pack/Plant_2.fbx" id="8_0cyc2"]
+[ext_resource type="PackedScene" uid="uid://d3l70hv1msven" path="res://LowPoly Environment Pack/Plant_3.fbx" id="9_tbev7"]
+[ext_resource type="PackedScene" uid="uid://c2pm1jiosygel" path="res://LowPoly Environment Pack/Plant_4.fbx" id="10_wk73j"]
+[ext_resource type="PackedScene" uid="uid://ctppntynfdbxt" path="res://LowPoly Environment Pack/Rock_2.fbx" id="12_ce6rf"]
+[ext_resource type="PackedScene" uid="uid://dj67jbud6gow6" path="res://LowPoly Environment Pack/Rock_3.fbx" id="13_4fbe7"]
+[ext_resource type="PackedScene" uid="uid://r1w13e4nh4vo" path="res://LowPoly Environment Pack/Rock_4.fbx" id="14_580ni"]
+[ext_resource type="PackedScene" uid="uid://cj4hyltqsqdgt" path="res://LowPoly Environment Pack/Tree_1.fbx" id="15_3wo18"]
+[ext_resource type="PackedScene" uid="uid://b2fhyxd7ponm5" path="res://LowPoly Environment Pack/Tree_2.fbx" id="16_rkax3"]
+[ext_resource type="PackedScene" uid="uid://1lnykmn4wvnl" path="res://LowPoly Environment Pack/Log_1.fbx" id="18_xgxx6"]
+[ext_resource type="PackedScene" uid="uid://dqi0ji6po0rkx" path="res://LowPoly Environment Pack/Log_2.fbx" id="19_mbw3s"]
+[ext_resource type="PackedScene" uid="uid://npjwb52cstg1" path="res://LowPoly Environment Pack/Log_3.fbx" id="20_d4qu6"]
+[ext_resource type="PackedScene" uid="uid://b1ydc1d03uuxp" path="res://screens/bush_1.tscn" id="20_gj6jm"]
+[ext_resource type="PackedScene" uid="uid://c5frjju1wqu2e" path="res://screens/log_1.tscn" id="20_sbxgy"]
+[ext_resource type="PackedScene" uid="uid://3cm7uyrxa32m" path="res://screens/rock_1.tscn" id="21_w3fwg"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_fj7yv"]
 panorama = ExtResource("1_h1iyc")
@@ -15,20 +33,36 @@ background_mode = 2
 sky = SubResource("Sky_tlwt5")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_036b0"]
-size = Vector3(10, 0.5, 10)
+size = Vector3(10, 0.5, 30)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vg34c"]
+albedo_texture = ExtResource("3_h1iyc")
+uv1_scale = Vector3(2, 2, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dwbse"]
-size = Vector3(10, 0.5, 10)
+material = SubResource("StandardMaterial3D_vg34c")
+size = Vector3(10, 0.5, 30)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_f3sb7"]
-size = Vector3(5, 5, 0.2)
+[sub_resource type="BoxShape3D" id="BoxShape3D_pjdma"]
+size = Vector3(15, 0.5, 10)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
-albedo_color = Color(0.26666668, 0.34509805, 0.37254903, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x38mu"]
+albedo_texture = ExtResource("3_h1iyc")
+uv1_scale = Vector3(2, 2, 2)
 
-[sub_resource type="BoxMesh" id="BoxMesh_tlwt5"]
-material = SubResource("StandardMaterial3D_fj7yv")
-size = Vector3(5, 5, 0.2)
+[sub_resource type="BoxMesh" id="BoxMesh_2umim"]
+material = SubResource("StandardMaterial3D_x38mu")
+size = Vector3(15, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h1iyc"]
+size = Vector3(15, 0.5, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vg34c"]
+size = Vector3(15, 0.5, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1iyc"]
+albedo_texture = ExtResource("3_h1iyc")
+uv1_scale = Vector3(2, 2, 2)
 
 [node name="World" type="Node3D"]
 
@@ -50,16 +84,77 @@ shape = SubResource("BoxShape3D_036b0")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("BoxMesh_dwbse")
 
-[node name="Wall" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76531816, 0)
+[node name="Floor2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.508986, 0, 0)
+metadata/_edit_group_ = true
 
-[node name="Collision" type="CollisionShape3D" parent="Wall"]
-shape = SubResource("BoxShape3D_f3sb7")
+[node name="Collision" type="CollisionShape3D" parent="Floor2"]
+shape = SubResource("BoxShape3D_pjdma")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall"]
-mesh = SubResource("BoxMesh_tlwt5")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor2"]
+mesh = SubResource("BoxMesh_2umim")
+
+[node name="Floor3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.345038, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="Collision" type="CollisionShape3D" parent="Floor3"]
+shape = SubResource("BoxShape3D_h1iyc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor3"]
+mesh = SubResource("BoxMesh_vg34c")
+surface_material_override/0 = SubResource("StandardMaterial3D_h1iyc")
+
+[node name="Log_2" parent="." instance=ExtResource("19_mbw3s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0915804, 0.29169148, -2.8919382)
+
+[node name="Log_3" parent="." instance=ExtResource("20_d4qu6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2260976, 0.38164532, -3.32906)
+
+[node name="Grass_1" parent="." instance=ExtResource("5_sbxgy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6834574, 0.26442462, -5.511858)
+
+[node name="Grass_2" parent="." instance=ExtResource("6_w3fwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9323988, 0.2625509, -5.918063)
+
+[node name="Plant_1" parent="." instance=ExtResource("7_elslt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5216722, 0.28362316, 0.6912996)
+
+[node name="Plant_2" parent="." instance=ExtResource("8_0cyc2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2890463, 0.28483978, 5.6949024)
+
+[node name="Plant_3" parent="." instance=ExtResource("9_tbev7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7928286, 0.339667, -0.5433856)
+
+[node name="Plant_4" parent="." instance=ExtResource("10_wk73j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.726798, 0.25117558, -6.7809296)
+
+[node name="Plant_5" parent="." instance=ExtResource("9_tbev7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8710299, 0.33966747, -7.3412333)
+
+[node name="Rock_2" parent="." instance=ExtResource("12_ce6rf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.321412, 1.6234695, -1.4571707)
+
+[node name="Rock_3" parent="." instance=ExtResource("13_4fbe7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9208527, 1.4796714, 12.81735)
+
+[node name="Rock_4" parent="." instance=ExtResource("14_580ni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4740725, 0.67844677, 10.453537)
+
+[node name="Tree_1" parent="." instance=ExtResource("15_3wo18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4354973, 0.36679795, -13.238523)
+
+[node name="Tree_2" parent="." instance=ExtResource("16_rkax3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.896848, 0.2891171, -3.4940665)
+
+[node name="Tree_3" parent="." instance=ExtResource("16_rkax3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.018211, 0.2891171, -2.8385212)
+
+[node name="Log_1" parent="." instance=ExtResource("18_xgxx6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3695116, 0.2699131, -2.4652767)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -87,3 +182,12 @@ offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_pjdma")
+
+[node name="Bush_1" parent="." instance=ExtResource("20_gj6jm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.719513, 0.25000003, 2.5230293)
+
+[node name="Log_4" parent="." instance=ExtResource("20_sbxgy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.935708, 0, -11.496965)
+
+[node name="Rock_1" parent="." instance=ExtResource("21_w3fwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3753462, 0.25000024, 5.7397814)
